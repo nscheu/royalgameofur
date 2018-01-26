@@ -8,9 +8,14 @@
 
 (define magic-tile (square 20 "solid" "blue") )
 (define paddle (circle 20 "solid" "blue"))
-(define game-board (rectangle (/ HEIGHT 2) (/ WIDTH 2) "solid" "blue"))
+(define vertical-line (rectangle 10 HEIGHT "solid" "black"))
+(define game-board-bg (rectangle (/ HEIGHT 2) (/ WIDTH 2) "solid" "blue"))
 
-(define (draw-state input) (place-image game-board 400 400 SCENE))
+
+
+(define game-board (place-image vertical-line 0 0 game-board-bg))
+
+(define (draw-state input) (place-image game-board (/ HEIGHT 2) (/ WIDTH 2) SCENE))
 
 
 (big-bang 0
